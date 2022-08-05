@@ -1,0 +1,28 @@
+dependencies:
+  - aave/protocol-v2@1.0.1
+
+compiler:
+  solc:
+    remappings:
+      - "@aave=aave/protocol-v2@1.0.1"
+
+networks:
+  default: mainnet-fork
+  kovan:
+    weth_token: "0xd0A1E359811322d97991E03f863a0C30C2cF029C"
+    LendingPoolAddressesProvider: "0x506B0B2CF20FAA8f38a4E2B524EE43e1f4458Cc5"
+    daiEthPriceFeed: "0x22B58f1EbEDfCA50feF632bD73368b2FdA96D541"
+    daiToken: "0xFf795577d9AC8bD7D90Ee22b6C1703490b6512FD"
+  mainnet-fork:
+    weth_token: "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2"
+    LendingPoolAddressesProvider: "0x24a42fD28C976A61Df5D00D0599C34c4f90748c8"
+    daiEthPriceFeed: "0x773616E4d11A78F511299002da57A0a94577F1f4"
+    daiToken: "0x6B175474E89094C44Da98b954EedeAC495271d0F"
+
+dotenv: .env
+
+wallet:
+  from_key: ${PRIVATE_KEY}
+
+settings:
+  gas_limit: "100000000000000000"
